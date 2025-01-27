@@ -96,10 +96,9 @@ retriever = db_disk.as_retriever(search_type="mmr",
 retrieval_chain = create_retrieval_chain(retriever, document_chain)
 answer=''
 
-if query == "Custom query":
-    query = st.text_input("Ask your question",)
-
 with st.form(key='my_form_to_submit'):
+    if query == "Custom query":
+        query = st.text_input("Ask your question")
     submit_button = st.form_submit_button(label='Submit')
 
     
